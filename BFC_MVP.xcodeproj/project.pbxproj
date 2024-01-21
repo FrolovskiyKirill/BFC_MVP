@@ -18,6 +18,7 @@
 		0EC238172B5C4C4F005A6DE0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238162B5C4C4F005A6DE0 /* AccountViewController.swift */; };
 		0EC238192B5D2070005A6DE0 /* HomeAssambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238182B5D2070005A6DE0 /* HomeAssambly.swift */; };
 		0EC2381B2B5D27F6005A6DE0 /* AccountAssambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2381A2B5D27F6005A6DE0 /* AccountAssambly.swift */; };
+		0EC2381E2B5D7336005A6DE0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0EC238162B5C4C4F005A6DE0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		0EC238182B5D2070005A6DE0 /* HomeAssambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssambly.swift; sourceTree = "<group>"; };
 		0EC2381A2B5D27F6005A6DE0 /* AccountAssambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssambly.swift; sourceTree = "<group>"; };
+		0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0EC237F72B5C483E005A6DE0 /* AppDelegate.swift */,
 				0EC237F92B5C483E005A6DE0 /* SceneDelegate.swift */,
 				0EC2380B2B5C4A8D005A6DE0 /* BabyFoodCareModel.swift */,
+				0EC2381C2B5D72FF005A6DE0 /* Services */,
 				0EC2380D2B5C4BC4005A6DE0 /* HomeModule */,
 				0EC2380E2B5C4BD0005A6DE0 /* AccountModule */,
 				0EC238002B5C4840005A6DE0 /* Assets.xcassets */,
@@ -96,6 +99,14 @@
 				0EC238162B5C4C4F005A6DE0 /* AccountViewController.swift */,
 			);
 			path = AccountModule;
+			sourceTree = "<group>";
+		};
+		0EC2381C2B5D72FF005A6DE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC2381E2B5D7336005A6DE0 /* NetworkService.swift in Sources */,
 				0EC238102B5C4BF8005A6DE0 /* HomeViewController.swift in Sources */,
 				0EC2381B2B5D27F6005A6DE0 /* AccountAssambly.swift in Sources */,
 				0EC238152B5C4C2D005A6DE0 /* AccountViewPresenter.swift in Sources */,

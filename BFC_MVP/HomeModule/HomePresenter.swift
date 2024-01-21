@@ -8,27 +8,40 @@
 import Foundation
 
 protocol HomeViewProtocol: AnyObject {
-    func setGreeting(greeting: String)
+    func success()
+    func failure(error: Error)
 }
 
 protocol HomePresenterProtocol: AnyObject {
-    init(view: HomeViewProtocol, model: BabyFoodCareModel)
-    func showGreeting()
-
+    init(view: HomeViewProtocol, networkService: NetworkServiceProtocol)
+    func getData()
+    var products: [BabyFoodCareModel]? { get set }
 }
 
 class HomePresenter: HomePresenterProtocol {
-    let view: HomeViewProtocol
-    let model: BabyFoodCareModel
+    weak var view: HomeViewProtocol?
+    let networkService: NetworkServiceProtocol!
+    var products: [BabyFoodCareModel]?
     
-    required init(view: HomeViewProtocol, model: BabyFoodCareModel) {
+    required init(view: HomeViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
-        self.model = model
+        self.networkService = networkService
+        getData()
     }
     
-    func showGreeting() {
-        let greeting = self.model.title + " Hello"
-        self.view.setGreeting(greeting: greeting)
+    func getData() {
+        networkService.getProducts { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let products):
+                    self.products = products
+                    self.view?.success()
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
+        }
     }
 }
 
