@@ -11,6 +11,12 @@ protocol NetworkServiceProtocol {
     func getProducts(completion: @escaping (Result<[BabyFoodCareModel]?, Error>) -> Void)
 }
 
+enum BFGError: Error {
+    case invalidURL
+    case invalidResponse
+    case invalidData
+}
+
 class NetworkService: NetworkServiceProtocol {
     func getProducts(completion: @escaping (Result<[BabyFoodCareModel]?, Error>) -> Void) {
         let urlString = "https://davnopora.fun/kir/food"

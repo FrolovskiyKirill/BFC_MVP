@@ -19,6 +19,10 @@
 		0EC238192B5D2070005A6DE0 /* HomeAssambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238182B5D2070005A6DE0 /* HomeAssambly.swift */; };
 		0EC2381B2B5D27F6005A6DE0 /* AccountAssambly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2381A2B5D27F6005A6DE0 /* AccountAssambly.swift */; };
 		0EC2381E2B5D7336005A6DE0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */; };
+		0EC238202B62D5CA005A6DE0 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC2381F2B62D5CA005A6DE0 /* APIRouter.swift */; };
+		0EC238222B62DE50005A6DE0 /* APIRequestDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238212B62DE50005A6DE0 /* APIRequestDispatcher.swift */; };
+		0EC238252B62E053005A6DE0 /* ApiClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238242B62E053005A6DE0 /* ApiClients.swift */; };
+		0EC238272B62E0AD005A6DE0 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC238262B62E0AD005A6DE0 /* BooksModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		0EC238182B5D2070005A6DE0 /* HomeAssambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssambly.swift; sourceTree = "<group>"; };
 		0EC2381A2B5D27F6005A6DE0 /* AccountAssambly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssambly.swift; sourceTree = "<group>"; };
 		0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0EC2381F2B62D5CA005A6DE0 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		0EC238212B62DE50005A6DE0 /* APIRequestDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestDispatcher.swift; sourceTree = "<group>"; };
+		0EC238242B62E053005A6DE0 /* ApiClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClients.swift; sourceTree = "<group>"; };
+		0EC238262B62E0AD005A6DE0 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 				0EC237F72B5C483E005A6DE0 /* AppDelegate.swift */,
 				0EC237F92B5C483E005A6DE0 /* SceneDelegate.swift */,
 				0EC2380B2B5C4A8D005A6DE0 /* BabyFoodCareModel.swift */,
+				0EC238262B62E0AD005A6DE0 /* BooksModel.swift */,
 				0EC2381C2B5D72FF005A6DE0 /* Services */,
 				0EC2380D2B5C4BC4005A6DE0 /* HomeModule */,
 				0EC2380E2B5C4BD0005A6DE0 /* AccountModule */,
@@ -105,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				0EC2381D2B5D7336005A6DE0 /* NetworkService.swift */,
+				0EC2381F2B62D5CA005A6DE0 /* APIRouter.swift */,
+				0EC238212B62DE50005A6DE0 /* APIRequestDispatcher.swift */,
+				0EC238242B62E053005A6DE0 /* ApiClients.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC238252B62E053005A6DE0 /* ApiClients.swift in Sources */,
 				0EC2381E2B5D7336005A6DE0 /* NetworkService.swift in Sources */,
 				0EC238102B5C4BF8005A6DE0 /* HomeViewController.swift in Sources */,
 				0EC2381B2B5D27F6005A6DE0 /* AccountAssambly.swift in Sources */,
@@ -186,7 +199,10 @@
 				0EC238192B5D2070005A6DE0 /* HomeAssambly.swift in Sources */,
 				0EC238172B5C4C4F005A6DE0 /* AccountViewController.swift in Sources */,
 				0EC237F82B5C483E005A6DE0 /* AppDelegate.swift in Sources */,
+				0EC238222B62DE50005A6DE0 /* APIRequestDispatcher.swift in Sources */,
 				0EC238122B5C4C05005A6DE0 /* HomePresenter.swift in Sources */,
+				0EC238272B62E0AD005A6DE0 /* BooksModel.swift in Sources */,
+				0EC238202B62D5CA005A6DE0 /* APIRouter.swift in Sources */,
 				0EC2380C2B5C4A8D005A6DE0 /* BabyFoodCareModel.swift in Sources */,
 				0EC237FA2B5C483E005A6DE0 /* SceneDelegate.swift in Sources */,
 			);

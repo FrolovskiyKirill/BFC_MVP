@@ -13,21 +13,27 @@ protocol HomeViewProtocol: AnyObject {
 }
 
 protocol HomePresenterProtocol: AnyObject {
-    init(view: HomeViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: HomeViewProtocol, networkService: NetworkServiceProtocol, authorityClient: AuthorityClient)
     func getData()
+    func getData2()
     var products: [BabyFoodCareModel]? { get set }
+    var authority: [Authority]? { get set }
 }
 
 class HomePresenter: HomePresenterProtocol {
-    weak var view: HomeViewProtocol?
-    let networkService: NetworkServiceProtocol!
-    var products: [BabyFoodCareModel]?
-    
-    required init(view: HomeViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: HomeViewProtocol, networkService: NetworkServiceProtocol, authorityClient: AuthorityClient) {
         self.view = view
         self.networkService = networkService
+        self.authorityClient = authorityClient
         getData()
+        getData2()
     }
+    
+    weak var view: HomeViewProtocol?
+    let networkService: NetworkServiceProtocol!
+    let authorityClient: AuthorityProtocol!
+    var products: [BabyFoodCareModel]?
+    var authority: [Authority]?
     
     func getData() {
         networkService.getProducts { [weak self] result in
@@ -43,5 +49,31 @@ class HomePresenter: HomePresenterProtocol {
             }
         }
     }
+    
+    func getData2() {
+        Task.init {
+            do {
+                self.authority = try await authorityClient.getAuthorities()
+            } catch {
+                print("Fetching establishments failed with error \(error)")
+            }
+        }
+    }
+    
+//    func getData() async {
+//        Task.init {
+//            do {
+//                self.products = try await networkService.getProducts2()
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.view?.success()
+//                }
+//            } catch {
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.view?.failure(error: error)
+//                }
+//            }
+//        }
+//    }
+
 }
 

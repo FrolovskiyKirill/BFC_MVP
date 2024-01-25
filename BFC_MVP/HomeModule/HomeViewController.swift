@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
 
     private func setupCollectionView() {
         view.addSubview(collectionView)
+        //Вынести в что-то типа .pin
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -43,15 +44,18 @@ class HomeViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.products?.count ?? 0
+        return presenter.authority?.count ?? 0
+//        return presenter.products?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GreetingCollectionViewCell.identifier, for: indexPath) as? GreetingCollectionViewCell else {
             fatalError("Unable to dequeue GreetingCollectionViewCell")
         }
-        let productTitle = presenter.products?[indexPath.row]
-        cell.greetingLabel.text = productTitle?.description
+        let authorityTitle = presenter.authority?[indexPath.row]
+//        let productTitle = presenter.products?[indexPath.row]
+//        cell.greetingLabel.text = productTitle?.description
+        cell.greetingLabel.text = authorityTitle?.name
         return cell
     }
 }
@@ -70,6 +74,7 @@ extension HomeViewController: HomeViewProtocol {
     }
 }
 
+//Вынести в отдельный файл
 class GreetingCollectionViewCell: UICollectionViewCell {
     static let identifier = "GreetingCollectionViewCell"
 
